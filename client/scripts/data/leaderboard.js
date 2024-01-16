@@ -1,16 +1,16 @@
-import { faker } from "@faker-js/faker";
+// import { faker } from "@faker-js/faker";
 import { randomInt, sortBy } from "../helpers.js";
 
 const createRecord = function (limit, minValue, maxValue) {
   let records = [];
 
-  for (let i = 0; i < limit; i++) {
-    records.push({
-      image: faker.image.avatar(),
-      name: faker.person.fullName(),
-      value: randomInt(minValue, maxValue, true),
-    });
-  }
+//   for (let i = 0; i < limit; i++) {
+//     records.push({
+//       image: faker.image.avatar(),
+//       name: faker.person.fullName(),
+//       value: randomInt(minValue, maxValue, true),
+//     });
+//   }
 
   records = sortBy(records, "value", true);
 
