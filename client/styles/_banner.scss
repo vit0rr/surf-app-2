@@ -1,0 +1,129 @@
+.banner {
+	width: 100%;
+
+	.uk-slideshow-items,
+	img,
+	video {
+		min-height: 320px;
+		height: 100dvh;
+	}
+
+	img,
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__content {
+		width: calc(100% - #{$gutter} - #{$gutter});
+		max-width: 1200px;
+		position: absolute;
+		bottom: multiply($gutter, 2);
+		left: 50%;
+		transform: translate(-50%);
+		z-index: 2;
+		padding: 0 $gutter;
+
+		@media (min-width: #{$md}) {
+			bottom: multiply($gutter, 4);
+		}
+
+		h4,
+		h3 {
+			margin: 0;
+			color: #fff;
+		}
+
+		h4 {
+			color: $primary;
+			font-size: 0.9rem;
+			@media (max-width: #{$md}) {
+				font-size: 0.75rem;
+			}
+		}
+
+		h3 {
+			margin-bottom: divide($gutter, 2);
+			line-height: 1.2;
+
+			@media (max-width: #{$md}) {
+				font-size: 1.1rem;
+			}
+		}
+
+		p {
+			max-width: 600px;
+			margin-top: 0;
+			margin-bottom: 0;
+			color: #fff;
+			line-height: 1.2;
+		}
+
+		.uk-button {
+			@media (min-width: #{$md}) {
+				margin-top: multiply($gutter, 2);
+			}
+			@media (max-width: #{$md}) {
+				font-size: 0.7rem;
+			}
+		}
+	}
+
+	.uk-slideshow-nav {
+		width: calc(100% - #{$gutter} - #{$gutter});
+		max-width: 1200px;
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translate(-50%);
+		padding: $gutter;
+		padding-left: 0;
+
+		li {
+			width: 50%;
+			max-width: 100px;
+
+			a {
+				width: 100%;
+				height: 2.5px;
+				position: relative;
+				border-radius: 0;
+				border: none;
+				-webkit-backdrop-filter: blur(20px);
+				backdrop-filter: blur(20px);
+				background-color: #000f1e66;
+
+				&::before {
+					content: '';
+					width: 0%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					background-color: $primary;
+					-webkit-backdrop-filter: blur(0px);
+					backdrop-filter: blur(0px);
+				}
+			}
+
+			&.uk-active a {
+				background-color: #fff;
+
+				&::before {
+					width: 0%;
+					animation: width 7s linear 0s forwards;
+				}
+
+				@keyframes width {
+					from {
+						width: 0%;
+					}
+					to {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+footer {
+	position: relative;
+	z-index: 2;
+	background-color: $secondary;
+
+	a,
+	span {
+		color: #fff;
+
+		&:hover,
+		&:visited {
+			color: #fff;
+		}
+	}
+}

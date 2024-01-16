@@ -1,0 +1,22 @@
+@mixin flex($direction: row, $justify: flex-start, $align: center, $wrap: nowrap) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+	flex-wrap: $wrap;
+}
+
+@mixin buttonReset {
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	appearance: none;
+}
+
+@mixin bg-blur {
+	border: 1px solid #fff3;
+	background-color: rgba(0, 0, 0, 0.25);
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}

@@ -1,0 +1,39 @@
+.tabs {
+  width: 100%;
+  max-width: $xs;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  overflow-x: auto;
+
+  &::before {
+    content: none;
+  }
+
+  li {
+    margin-bottom: 5px;
+    padding-left: 0;
+    border-radius: 100px;
+
+    & + li {
+      margin-left: $gutter;
+    }
+  }
+
+  .uk-active {
+    background-color: $primary;
+
+    a {
+      border: none;
+      color: #fff;
+    }
+  }
+}
+
+.tabs::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+.tabs::-webkit-scrollbar-track {
+  background-color: transparent;
+}
